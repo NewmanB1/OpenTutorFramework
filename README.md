@@ -23,19 +23,21 @@ No cloud. No tracking. Runs entirely on-device with small quantized LLMs (1–3B
 
 ## Quick Start (for different people)
 
+## Quick Start (for different people)
+
 ### For Teachers / Educators (no coding needed)
-1. [Add a new subject module in 15 minutes →](link-to-PLUGINS.md)
-2. Bundle your favorite open textbook excerpts.
+1. [Add a new subject module in 15 minutes →](PLUGINS.md)
+2. Bundle your favorite open textbook excerpts (CC0 or permissive license).
 
 ### For Developers
 1. Clone the repo
-2. Check [ARCHITECTURE.md](ARCHITECTURE.md) for the modular layers
-3. Build the minimal reference implementation (examples/minimal-tutor)
+2. Read [ARCHITECTURE.md](ARCHITECTURE.md) for the modular layers
+3. Check [PLUGINS.md](PLUGINS.md) and start with the examples in `plugins/`
 
 ### For Testers / Users with old phones
-1. Download a pre-built APK from Releases
-2. Sideload and test performance on your device
-3. Report results in [hardware-testing.md](docs/hardware-testing.md)
+1. Build a debug APK (`./gradlew assembleDebug`)
+2. Sideload and test on your device
+3. Report results by opening an issue (we'll add hardware-testing guide soon)
 
 ## High-Level Architecture
 (Embed your Mermaid diagram here — it renders automatically on GitHub)
