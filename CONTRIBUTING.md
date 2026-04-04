@@ -54,6 +54,63 @@ Be kind, respectful, and constructive. We want this to be an inclusive space for
 - Test on at least one target-class phone if possible
 - Reference any related issues
 
+Plugin Loading
+At startup, the core:
+
+Scans the plugins/ directory (and assets folder in the APK).
+Reads all manifest.json files.
+Registers available subjects, pedagogy styles, and other modules.
+Lets the user (or default settings) choose which ones to activate.
+
+Plugins are loaded as read-only assets — they are safe and easy to update via new APK releases or sideloading.
+Technical Details for Developers
+
+Plugins are discovered at runtime via a simple PluginRegistry class.
+The Tutor Engine combines the selected subject prompt + pedagogy rules + user input into a single prompt for the Inference Core.
+All communication uses the JSON interfaces defined in ARCHITECTURE.md.
+Advanced plugins can include small Kotlin/Java classes if needed (e.g., for custom scoring logic), but most can be pure JSON + text.
+
+Best Practices
+
+Keep prompts concise — old phones have limited context windows.
+Use permissive licenses (MIT, Apache 2.0, CC0, CC-BY-SA).
+Test on real low-end hardware (see docs/hardware-testing.md).
+Include example conversations in the examples/ folder so others can see how your plugin behaves.
+Document any prerequisites (e.g., "requires at least 4 GB RAM for this knowledge bundle").
+
+Examples Included in This Repo
+
+examples/minimal-math-plugin/ — A complete working example you can copy
+examples/socratic-pedagogy/ — Default Socratic style
+
+How to Submit a Plugin
+
+Create your plugin following the structure above.
+Open a Pull Request with your plugin folder.
+Add a short description in the PR: what it teaches, target audience, and any testing notes.
+We will review it for resource usage and educational value.
+
+See CONTRIBUTING.md for general contribution guidelines.
+
+This plugin system is deliberately simple so that a teacher with no programming experience can contribute a useful module in one afternoon, while still allowing advanced developers to extend it deeply.
+Let's build a rich ecosystem of open tutoring modules together — turning discarded phones into personalized tutors for students everywhere.
+Version: 0.1
+Last updated: April 2026
+textThis file is welcoming to non-technical contributors while still giving developers the details they need. It directly references your existing docs (`ARCHITECTURE.md` and `CONTRIBUTING.md`) to create a cohesive set.
+
+### Quick Next Steps After Adding This
+1. Create the folder `examples/minimal-math-plugin/` with a simple manifest and prompt so people have something concrete to copy.
+2. Update your README.md to link to this new PLUGINS.md prominently.
+
+Would you like me to:
+- Write a sample `minimal-math-plugin` with actual files?
+- Draft `pedagogy-guide.md` next?
+- Create `docs/hardware-testing.md`?
+- Or tweak anything in this PLUGINS.md (e.g., make it shorter, add more examples, change tone)?
+
+Just tell me your preference and we'll keep the momentum going with the next small, useful pie
+
+
 ## Questions?
 - Use [GitHub Discussions](link-to-discussions) for questions or ideas
 - Open an issue for bugs or feature requests
