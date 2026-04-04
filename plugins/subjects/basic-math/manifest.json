@@ -1,0 +1,12 @@
+**Example `manifest.json`**:
+```json
+{
+  "id": "basic-math",
+  "name": "Basic Mathematics",
+  "description": "Addition, subtraction, multiplication, and division for elementary students",
+  "target_age": "6-11",
+  "pedagogy_default": "socratic",
+  "version": "1.0.0",
+  "author": "Your Name",
+  "license": "CC0-1.0"
+}
