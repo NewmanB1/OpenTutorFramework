@@ -1,0 +1,11 @@
+{
+  "id": "socratic",
+  "name": "Socratic Method",
+  "description": "Guides students to discover answers through guided questions",
+  "rules": {
+    "never_give_direct_answer": true,
+    "one_question_at_a_time": true,
+    "praise_effort": true,
+    "adapt_difficulty": true
+  }
+}
