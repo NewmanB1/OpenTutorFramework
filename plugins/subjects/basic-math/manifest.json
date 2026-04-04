@@ -1,12 +1,13 @@
-**Example `manifest.json`**:
-```json
 {
   "id": "basic-math",
+  "type": "subject",
   "name": "Basic Mathematics",
-  "description": "Addition, subtraction, multiplication, and division for elementary students",
+  "description": "Addition, subtraction, multiplication, division, and simple word problems for elementary students (ages 6-11)",
   "target_age": "6-11",
+  "target_grade": "1-5",
   "pedagogy_default": "socratic",
   "version": "1.0.0",
-  "author": "Your Name",
-  "license": "CC0-1.0"
+  "author": "OpenTutorFramework Community",
+  "license": "CC0-1.0",
+  "tags": ["arithmetic", "elementary-math"]
 }
