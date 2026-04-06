@@ -27,3 +27,6 @@ The core never hard-codes any subject or teaching method — it only provides th
 
 Create a folder inside `plugins/subjects/` with this structure:
 
+## Examples Included
+
+- `plugins/subjects/basic-math/` — A complete working example for elementary arithmetic (ready to copy and modify)
