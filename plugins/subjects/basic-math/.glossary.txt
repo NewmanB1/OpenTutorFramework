@@ -1,0 +1,6 @@
+Addition: Combining two or more numbers to find the total.
+Subtraction: Taking one number away from another.
+Multiplication: Adding a number to itself a certain number of times.
+Division: Sharing something equally or finding how many times one number fits into another.
+
+Key tip for students: Always read the problem carefully and draw a picture if it helps!
