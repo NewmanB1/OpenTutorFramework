@@ -40,10 +40,41 @@ No cloud. No tracking. Runs entirely on-device with small quantized LLMs (1–3B
 3. Report results by opening an issue (we'll add hardware-testing guide soon)
 
 ## High-Level Architecture
-(Embed your Mermaid diagram here — it renders automatically on GitHub)
 
 ```mermaid
+%%{init: {"flowchart": {"htmlLabels": false}}}%%
 graph TD
-    A[User Interface] --> B[Tutor Engine]
-    B --> C[Inference Core (pluggable: MediaPipe / MLC-LLM / llama.cpp)]
-    E[Plugins (subjects, pedagogy, accessibility)] --> B
+    UI["User Interface Layer
+Chat / Voice / Quiz / Progress UI
+Pluggable skins & accessibility modes"] 
+    --> Engine["Tutor Engine Layer
+Socratic / pedagogy logic
+Memory & progress tracking
+Adaptation rules
+Conversation state"]
+
+    Engine --> Inference["Inference Core
+Pluggable backends
+• MediaPipe LLM Inference
+• MLC-LLM
+• llama.cpp via NDK
+• LiteRT-LM (future)"]
+
+    Plugins["Plugin System
+• Subject modules (prompt sets + knowledge)
+• Pedagogy modules
+• Accessibility plugins
+• Knowledge bundles (bundled text files)"] 
+    --> Engine
+
+    Storage["Offline Storage Layer
+SQLite for history/progress
+Bundled open educational resources
+Model cache"] 
+    --> Engine
+
+    Hardware["Hardware Abstraction Layer
+RAM/CPU/GPU/NPU detection
+Power & thermal management
+Android API abstractions"] 
+    --> Inference
