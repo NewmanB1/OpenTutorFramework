@@ -1,0 +1,7 @@
+{
+  "example_id": "addition-basics-1",
+  "user_input": "What is 3 + 5?",
+  "expected_bot_reply": "Great question! Before we add them, can you tell me what you think 'plus' means here? Or maybe show me with your fingers?",
+  "learning_goal": "understanding addition as combining",
+  "notes": "Demonstrates Socratic questioning instead of direct answer"
+}
