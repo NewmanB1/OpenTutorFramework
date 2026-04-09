@@ -21,23 +21,17 @@ No cloud. No tracking. Runs entirely on-device with small quantized LLMs (1–3B
 - Simple JSON interfaces between layers.
 - Fork-friendly and distro-friendly.
 
-## Quick Start (for different people)
+## Current Features
 
-## Quick Start (for different people)
+- **Plugin-based architecture** — easy for teachers to add subjects and pedagogy styles
+- **Student Context Object** — grade-appropriate, personalized Socratic tutoring
+- **Basic Math plugin** — working example with Socratic prompts
+- **Rap Hero mode** (planned) — generate, lock-in, perform, and share educational raps
+- **Doorway MeshSync** (planned) — offline Bluetooth sharing of best hints and question chains at school/library doors
+- Lightweight safety & grade checks
+- Fully offline, runs on 4–8 GB recycled Android phones
 
-### For Teachers / Educators (no coding needed)
-1. [Add a new subject module in 15 minutes →](PLUGINS.md)
-2. Bundle your favorite open textbook excerpts (CC0 or permissive license).
 
-### For Developers
-1. Clone the repo
-2. Read [ARCHITECTURE.md](ARCHITECTURE.md) for the modular layers
-3. Check [PLUGINS.md](PLUGINS.md) and start with the examples in `plugins/`
-
-### For Testers / Users with old phones
-1. Build a debug APK (`./gradlew assembleDebug`)
-2. Sideload and test on your device
-3. Report results by opening an issue (we'll add hardware-testing guide soon)
 
 ## High-Level Architecture
 
@@ -57,3 +51,20 @@ graph TD
 
     Hardware["Hardware Abstraction<br/>RAM / Power / Thermal"] 
     --> Inference
+
+
+## Quick Start (for different people)
+
+### For Teachers / Educators (no coding needed)
+1. [Add a new subject module in 15 minutes →](PLUGINS.md)
+2. Bundle your favorite open textbook excerpts (CC0 or permissive license).
+
+### For Developers
+1. Clone the repo
+2. Read [ARCHITECTURE.md](ARCHITECTURE.md) for the modular layers
+3. Check [PLUGINS.md](PLUGINS.md) and start with the examples in `plugins/`
+
+### For Testers / Users with old phones
+1. Build a debug APK (`./gradlew assembleDebug`)
+2. Sideload and test on your device
+3. Report results by opening an issue (we'll add hardware-testing guide soon)
