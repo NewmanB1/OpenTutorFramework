@@ -1,70 +1,73 @@
-# OpenTutorFramework
-# OpenTutor Framework (or your chosen name: RecycleTutor / Tutorbot Kernel)
+# OpenTutor Framework
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
-[![GitHub Discussions](https://img.shields.io/github/discussions/...)]()
 
-**The Linux of tutorbots** — A lightweight, modular, fully open-source framework to turn discarded Android phones (2019–2023 models, 4–8 GB RAM) into private, offline Socratic tutors.
+**The Linux of tutorbots** — A lightweight, modular, offline-first framework that turns discarded Android phones (2019–2023 models with 4–8 GB RAM) into private Socratic tutors.
 
 No cloud. No tracking. Runs entirely on-device with small quantized LLMs (1–3B params). Built for e-waste reuse, accessibility, and community extension.
 
 ## Why This Matters
 - Education should not require expensive hardware or internet.
-- Old phones become powerful, personalized tutors for math, languages, history, etc.
-- Teachers, parents, and students can contribute subject modules or pedagogy styles without deep coding.
-- Your Anthropology + Systems Architecture background ensures it's human-centered and technically robust.
-
-## Core Philosophy (the "kernel" rules)
-- Everything is a plugin (subjects, teaching methods, UIs, accessibility).
-- Strict resource limits for real old hardware.
-- 100% offline after setup.
-- Simple JSON interfaces between layers.
-- Fork-friendly and distro-friendly.
-
-## Current Features
-
-- **Plugin-based architecture** — easy for teachers to add subjects and pedagogy styles
-- **Student Context Object** — grade-appropriate, personalized Socratic tutoring
-- **Basic Math plugin** — working example with Socratic prompts
-- **Rap Hero mode** (planned) — generate, lock-in, perform, and share educational raps
-- **Doorway MeshSync** (planned) — offline Bluetooth sharing of best hints and question chains at school/library doors
-- Lightweight safety & grade checks
-- Fully offline, runs on 4–8 GB recycled Android phones
-
-
+- Old phones become powerful, personalized tutors for math, social studies, English, and science.
+- Teachers, parents, and students can contribute subject modules, pedagogy styles, creative tools, and shared content without deep coding.
 
 ## High-Level Architecture
 
 ```mermaid
 %%{init: {"flowchart": {"htmlLabels": false}}}%%
 graph TD
-    UI["User Interface Layer<br/>Chat + Voice + Quiz"] 
-    --> Engine["Tutor Engine Layer<br/>Socratic logic + Student Context"]
+    UI["User Interface Layer<br/>Chat + Voice + Quiz UI<br/>Pluggable skins & accessibility"] 
+    --> Engine["Tutor Engine Layer<br/>Socratic logic + Student Context<br/>Adaptation rules"]
 
-    Engine --> Inference["Inference Core<br/>MediaPipe • MLC-LLM • llama.cpp"]
+    Engine --> Inference["Inference Core<br/>Pluggable backends<br/>MediaPipe • MLC-LLM • llama.cpp"]
 
     Plugins["Plugin System<br/>Subjects • Pedagogy • Rap Hero • MeshSync"] 
     --> Engine
 
-    Storage["Offline Storage<br/>SQLite + Plugins + Synced Content"] 
+    Storage["Offline Storage Layer<br/>SQLite + Plugins + Synced Content"] 
     --> Engine
 
-    Hardware["Hardware Abstraction<br/>RAM / Power / Thermal"] 
+    Hardware["Hardware Abstraction Layer<br/>RAM / CPU / GPU detection<br/>Power & thermal management"] 
     --> Inference
+Current Features
+
+Plugin-based architecture — Teachers can add or modify subjects and pedagogy styles easily
+Student Context Object — Keeps responses grade-appropriate and personalized
+Basic Math plugin — Working Socratic example (see plugins/subjects/basic-math/)
+Lightweight safety & grade checks
+Planned / In Progress:
+Rap Hero mode (generate, lock-in, perform, and share educational raps)
+Doorway MeshSync (offline Bluetooth/Nearby sharing of best hints and question chains at school/library doors)
+Music video contests for creative learning
+Full Android app skeleton with inference integration
 
 
-## Quick Start (for different people)
+Quick Start
+For Teachers / Educators (no coding needed)
 
-### For Teachers / Educators (no coding needed)
-1. [Add a new subject module in 15 minutes →](PLUGINS.md)
-2. Bundle your favorite open textbook excerpts (CC0 or permissive license).
+Add or customize a subject plugin →
+Start with the included basic-math example
+Lock in community content or hints for your class
 
-### For Developers
-1. Clone the repo
-2. Read [ARCHITECTURE.md](ARCHITECTURE.md) for the modular layers
-3. Check [PLUGINS.md](PLUGINS.md) and start with the examples in `plugins/`
+For Developers
 
-### For Testers / Users with old phones
-1. Build a debug APK (`./gradlew assembleDebug`)
-2. Sideload and test on your device
-3. Report results by opening an issue (we'll add hardware-testing guide soon)
+Read ARCHITECTURE.md for the modular layers
+Explore PLUGINS.md to understand how to extend the system
+
+For Testers / Users with old phones
+
+Build debug APK: ./gradlew assembleDebug
+Sideload and test on real 2019–2023 hardware
+Report performance and issues
+
+Next Documents to Read
+
+ARCHITECTURE.md — Detailed layers, principles, and interfaces
+PLUGINS.md — How to create and contribute plugins
+CONTRIBUTING.md — How to get involved (all skill levels welcome)
+
+Get Involved
+We welcome teachers (pedagogy & subject modules), developers (backends & features), and recyclers/testers (hardware feedback).
+This project is in early "kernel" stage. The core is deliberately minimal so the community can grow it into many subject-specific "distros."
+License: Apache 2.0 — see the LICENSE file for details.
+text
