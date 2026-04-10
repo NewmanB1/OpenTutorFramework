@@ -30,3 +30,23 @@ Create a folder inside `plugins/subjects/` with this structure:
 ## Examples Included
 
 - `plugins/subjects/basic-math/` — A complete working example for elementary arithmetic (ready to copy and modify)
+
+- ## Sync Plugins
+
+### Mesh Learning (Doorway MeshSync)
+
+The `mesh-learning` plugin enables phones to exchange small, high-value tutoring content via Bluetooth or Nearby Connections when passing a school or library doorway.
+
+**What it shares:**
+- Short hint sequences (math)
+- Socratic question chains (social studies, science, English)
+- Rap lyrics and performance tips (Rap Hero mode)
+- Success metadata (e.g., "this hint helped 87% of students")
+
+**Important limits:**
+- Total payload per pass: ~150 KB maximum (typically 8–15 small JSON files)
+- Not suitable for videos or large media (use USB or Quick Share for those)
+
+See `plugins/sync/mesh-learning/` for the current implementation and examples.
+
+This feature allows the tutorbot to improve over time through real classroom usage while staying fully offline by default.
