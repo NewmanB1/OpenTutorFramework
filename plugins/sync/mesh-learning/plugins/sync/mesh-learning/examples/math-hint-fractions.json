@@ -1,0 +1,10 @@
+{
+  "id": "math-fractions-division-01",
+  "subject": "math",
+  "grade_band": "5-6",
+  "type": "hint-sequence",
+  "title": "Dividing Fractions",
+  "content": "Ask: What does dividing by a fraction really mean? Then: How can we multiply by the reciprocal instead?",
+  "success_rate": 0.87,
+  "tags": ["fractions", "division"]
+}
