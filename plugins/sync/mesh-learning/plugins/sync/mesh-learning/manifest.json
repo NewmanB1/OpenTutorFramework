@@ -1,0 +1,11 @@
+{
+  "id": "mesh-learning",
+  "type": "sync",
+  "name": "Doorway MeshSync",
+  "description": "Offline Bluetooth/Nearby Connections sharing of small, high-value tutoring content (hints, Socratic chains, rap lyrics, success metadata).",
+  "version": "1.0.0",
+  "author": "OpenTutorFramework Community",
+  "license": "Apache-2.0",
+  "max_payload_kb": 150,
+  "recommended_items": 8
+}
