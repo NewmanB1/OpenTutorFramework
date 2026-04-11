@@ -41,6 +41,7 @@ Implements the core tutoring loop using a system prompt + conversation history
 Handles Socratic questioning, difficulty adaptation, effort-based praise, and spaced review
 Maintains lightweight memory (conversation summary + learned concepts as JSON)
 All pedagogy logic comes from plugins
+The Tutor Engine uses a single main LLM inference per user turn, combined with plugin-selected prompts and the student context object. Additional lightweight rule-based checks handle safety and grade appropriateness.
 
 3. Inference Core
 
