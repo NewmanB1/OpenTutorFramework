@@ -57,6 +57,10 @@ Models: 1–3B parameters, aggressively quantized (4-bit or lower)
 Subject plugins, pedagogy plugins, accessibility plugins, and knowledge bundles
 Loaded from a standard plugins/ directory or assets folder
 Simple to add without touching the core
+#### MeshSync Plugin (Doorway Learning)
+The optional `mesh-learning` plugin enables phones to exchange small JSON-based tutoring artifacts (hints, Socratic question chains, rap lyrics, success metadata) via Bluetooth/Nearby Connections when passing a school or library doorway. 
+
+This creates a decentralized, self-improving network without any central server or internet. Payloads are strictly limited (~150 KB per pass) to ensure reliability on old hardware. Larger media such as videos must be added manually via USB or Quick Share.
 
 5. Offline Storage Layer
 
