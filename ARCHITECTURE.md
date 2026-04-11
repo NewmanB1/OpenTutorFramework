@@ -63,6 +63,28 @@ The optional `mesh-learning` plugin enables phones to exchange small JSON-based 
 
 This creates a decentralized, self-improving network without any central server or internet. Payloads are strictly limited (~150 KB per pass) to ensure reliability on old hardware. Larger media such as videos must be added manually via USB or Quick Share.
 
+### Behavioral Adaptive Learning & Network Feedback
+
+One of the most powerful capabilities of the framework is the ability to evolve beyond static Socratic tutoring toward a continuously improving, data-driven adaptive system — inspired by modern behavioral frameworks that reject rigid "learning styles" in favor of dynamic learner states.
+
+#### Learner State Model
+Instead of fixed categories, the **Student Context Object** maintains a lightweight, continuously updated multidimensional state:
+
+```json
+{
+  "grade_band": "5-6",
+  "subject": "math",
+  "engagement": 0.78,
+  "cognition": 0.65,
+  "control_preference": "guided",
+  "behavioral_rhythm": "sustained",
+  "confidence": 0.45,
+  "hint_usage_rate": 0.6,
+  "error_recovery_speed": 0.7,
+  "learned_concepts": ["fraction_recognition"],
+  "session_summary": "Struggled with division but recovered well after visual hint"
+}
+
 5. Offline Storage Layer
 
 SQLite for history, progress, and preferences
