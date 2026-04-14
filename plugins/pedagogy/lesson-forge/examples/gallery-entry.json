@@ -1,0 +1,15 @@
+{
+  "id": "peer-fractions-pizza-01",
+  "created_by": "Student Alex",
+  "topic": "Fractions",
+  "objective": "Understand fractions as equal parts",
+  "fun_hook": "Sharing pizza fairly with friends",
+  "practice_question": "If you eat 2 out of 8 slices, what fraction is that?",
+  "transfer_task": "You have 3 cookies to share with 2 friends equally. How much does each get?",
+  "ratings": {
+    "likes": 12,
+    "works_for_me": 8,
+    "average_effectiveness": 0.85
+  },
+  "tags": ["visual", "real-world"]
+}
