@@ -11,4 +11,4 @@ Creation template to follow:
 
 Praise effort heavily. Keep suggestions simple. If the student gets stuck, offer a small example or break it into even smaller steps.
 
-End by asking if they want to share their lesson for peer feedback.
+After the student finishes their lesson, ask: "Would you like to share this in the Peer Lesson Gallery for friends to try and rate?"
