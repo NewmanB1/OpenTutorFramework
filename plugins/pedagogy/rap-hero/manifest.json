@@ -1,0 +1,11 @@
+{
+  "id": "rap-hero",
+  "type": "pedagogy",
+  "name": "Rap Hero & Lyric Mastery",
+  "description": "Generate, lock-in, perform, and share educational rap battles in the style of Epic Rap Battles of History or Keynes vs Hayek. Students learn by performing the lyrics.",
+  "subjects": ["history", "science", "math", "social-studies", "english"],
+  "target_age": "10-18",
+  "version": "1.0.0",
+  "author": "OpenTutorFramework Community",
+  "license": "Apache-2.0"
+}
