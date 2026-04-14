@@ -1,0 +1,18 @@
+{
+  "id": "american-revolution-1776",
+  "topic": "American Revolution",
+  "title": "Patriots vs King George",
+  "locked_by": "Teacher Example",
+  "verses": [
+    {
+      "side": "King George III",
+      "lyrics": "I'm the king across the sea, taxes due, pay up to me!\nBoston boys threw tea, now they're causing misery!"
+    },
+    {
+      "side": "Patriots",
+      "lyrics": "We tired of your rules from across the ocean blue,\nNo taxation without representation — that's our crew!"
+    }
+  ],
+  "key_facts": ["Stamp Act", "Boston Tea Party", "No taxation without representation"],
+  "performance_tips": "Rap the Patriots verse with energy — feel the rebellion!"
+}
