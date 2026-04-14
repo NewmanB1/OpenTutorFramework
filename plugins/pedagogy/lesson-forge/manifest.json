@@ -1,12 +1,12 @@
 {
   "id": "lesson-forge",
   "type": "pedagogy",
-  "name": "Lesson Forge + Peer Gallery",
-  "description": "Students create short lessons with tutor guidance. Peers review, rate, and improve them. Best lessons spread via MeshSync.",
+  "name": "Lesson Forge + Peer Gallery + Team Forge",
+  "description": "Students create lessons individually or in small teams. Includes guided creation, peer gallery with ratings, and lightweight team discovery/management.",
   "subjects": ["math", "social-studies", "english", "science"],
   "target_age": "8-14",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "OpenTutorFramework Community",
   "license": "Apache-2.0",
-  "features": ["guided creation", "peer review", "simple ratings", "MeshSync sharing"]
+  "features": ["guided creation", "peer review", "simple ratings", "team discovery", "MeshSync sharing"]
 }
