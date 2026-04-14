@@ -15,5 +15,23 @@ Old phones become personalized tutors for math, social studies, English, and sci
 graph TD
     UI["UI Layer<br/>Chat + Voice + Quiz"] --> Engine["Tutor Engine<br/>Socratic + Context"]
     Engine --> Inference["Inference Core<br/>MediaPipe • MLC-LLM • llama.cpp"]
-    Plugins["Plugins<br/>Subjects • Pedagogy • MeshSync • Rap Hero"] --> Engine
+    Plugins["Plugins<br/>Subjects • Pedagogy • MeshSync • Rap Hero • Lesson Forge"] --> Engine
     Storage["Storage<br/>SQLite + Plugins"] --> Engine
+
+
+Current Features
+
+Plugin system with working basic-math example
+MeshSync: Offline Bluetooth doorway sharing of small tutoring content (hints, question chains, rap lyrics)
+Rap Hero: Generate, lock-in, and perform educational raps
+Lesson Forge: Guided mode for students to create their own short lessons with peer feedback
+Behavioral learner state tracking for adaptive responses
+Media guidelines for videos and large content (manual import only)
+
+See docs/media-guidelines.md for details on what can be shared via MeshSync.
+Quick Start
+Teachers: See PLUGINS.md and try the basic-math or lesson-forge plugins.
+Developers: Read ARCHITECTURE.md.
+Testers: Build with ./gradlew assembleDebug and test on real old phones.
+See CONTRIBUTING.md — all skill levels welcome.
+License: Apache 2.0 — see LICENSE
