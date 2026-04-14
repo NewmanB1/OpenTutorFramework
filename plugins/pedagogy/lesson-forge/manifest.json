@@ -1,0 +1,11 @@
+{
+  "id": "lesson-forge",
+  "type": "pedagogy",
+  "name": "Lesson Forge - Kid Creator Mode",
+  "description": "Guided mode where students create their own short, measurable lessons or activities. Peers can review and improve them. Makes learning deeper through teaching.",
+  "subjects": ["math", "social-studies", "english", "science"],
+  "target_age": "8-14",
+  "version": "1.0.0",
+  "author": "OpenTutorFramework Community",
+  "license": "Apache-2.0"
+}
