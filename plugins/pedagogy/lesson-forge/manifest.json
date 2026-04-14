@@ -1,11 +1,12 @@
 {
   "id": "lesson-forge",
   "type": "pedagogy",
-  "name": "Lesson Forge - Kid Creator Mode",
-  "description": "Guided mode where students create their own short, measurable lessons or activities. Peers can review and improve them. Makes learning deeper through teaching.",
+  "name": "Lesson Forge + Peer Gallery",
+  "description": "Students create short lessons with tutor guidance. Peers review, rate, and improve them. Best lessons spread via MeshSync.",
   "subjects": ["math", "social-studies", "english", "science"],
   "target_age": "8-14",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "OpenTutorFramework Community",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "features": ["guided creation", "peer review", "simple ratings", "MeshSync sharing"]
 }
