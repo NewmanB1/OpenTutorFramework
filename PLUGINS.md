@@ -64,3 +64,17 @@ The `rap-hero` plugin enables generation, lock-in, performance, and sharing of e
 See `plugins/pedagogy/rap-hero/` for the current implementation and examples.
 
 This plugin brings high-engagement, memorable learning while staying fully compatible with the lightweight architecture.
+
+### Lesson Forge - Kid Creator Mode
+
+The `lesson-forge` plugin guides students to create their own short, measurable lessons or activities with step-by-step coaching from the tutor.
+
+**Key features:**
+- Simple 5-part lesson template (Objective, Fun Hook, Practice Question, Transfer Task, Optional Fun Twist)
+- Tutor acts as a patient coach, asking one question at a time
+- Peer review mode where students give kind, useful feedback on each other’s creations
+- Created lessons are saved as small JSON files that can be shared via Quick Share or MeshSync
+
+See `plugins/pedagogy/lesson-forge/` for the current implementation and examples.
+
+This plugin turns students from passive learners into active co-creators, deepening understanding through teaching while keeping the process fun and low-effort.
