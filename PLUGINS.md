@@ -78,3 +78,17 @@ The `lesson-forge` plugin guides students to create their own short, measurable 
 See `plugins/pedagogy/lesson-forge/` for the current implementation and examples.
 
 This plugin turns students from passive learners into active co-creators, deepening understanding through teaching while keeping the process fun and low-effort.
+
+### Peer Lesson Forge Gallery
+
+The Peer Gallery extends Lesson Forge by letting students browse, try, rate, and improve lessons created by their peers.
+
+**Key features:**
+- Students can view short peer-created lessons (title, objective, fun hook, practice question, transfer task)
+- Simple rating system: "Like", "Works for me", "Needs improvement"
+- Ratings feed back into effectiveness mapping and help the tutor recommend better content
+- Lessons can be shared via MeshSync (small JSON) or manual Quick Share
+
+This creates a positive feedback loop where students learn deeply by teaching and refining each other’s work.
+
+See `plugins/pedagogy/lesson-forge/` for the current implementation, including the gallery system prompt and sample entries.
