@@ -50,3 +50,17 @@ The `mesh-learning` plugin enables phones to exchange small, high-value tutoring
 See `plugins/sync/mesh-learning/` for the current implementation and examples.
 
 This feature allows the tutorbot to improve over time through real classroom usage while staying fully offline by default.
+
+### Rap Hero & Lyric Mastery
+
+The `rap-hero` plugin enables generation, lock-in, performance, and sharing of educational rap battles.
+
+**Key features:**
+- Generate short, catchy rap battles that teach accurate facts (history, science, math, etc.)
+- Teacher "lock-in" mode for class standardization
+- Rap Hero performance mode (students practice and perform the lyrics)
+- Easy sharing of best raps via JSON files (manual or future MeshSync)
+
+See `plugins/pedagogy/rap-hero/` for the current implementation and examples.
+
+This plugin brings high-engagement, memorable learning while staying fully compatible with the lightweight architecture.
