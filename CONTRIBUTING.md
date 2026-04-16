@@ -103,7 +103,7 @@ Please keep documentation:
 
 Relevant guides:
 
-* `PLUGINS.md` — Plugin creation (includes 15-minute guide)
+* `PLUGINS.md` — Plugin creation 
 * `docs/pedagogy-guide.md` — Socratic + adaptive teaching
 * `docs/hardware-testing.md` — Real-device testing
 * `docs/media-guidelines.md` — MeshSync content rules
