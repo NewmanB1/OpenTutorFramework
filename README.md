@@ -1,97 +1,124 @@
-"""OpenTutor Framework
+# OpenTutor Framework
 
-The Linux of tutorbots — A lightweight, modular, offline-first framework that turns discarded Android phones (2019–2023 models with 4–8 GB RAM) into private Socratic tutors.
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+
+**The Linux of tutorbots** — A lightweight, modular, offline-first framework that turns discarded Android phones (2019–2023 models with 4–8 GB RAM) into private Socratic tutors.
 
 No cloud required. Runs entirely on-device with small quantized LLMs. Designed for e-waste reuse, accessibility, and community-driven growth.
 
 ---
 
-WHY THIS MATTERS
+## Table of Contents
 
-Old phones become personalized tutors for math, social studies, English, and science. Teachers, students, and hobbyists can contribute plugins and share effective teaching content — all while keeping everything private and offline.
-
----
-
-HIGH-LEVEL ARCHITECTURE
-
-UI Layer (Chat + Voice + Quiz)
-    -> Tutor Engine (Socratic + Context)
-        -> Inference Core (MediaPipe, MLC-LLM, llama.cpp)
-
-Plugins (Subjects, Pedagogy, MeshSync, Rap Hero, Lesson Forge)
-    -> Tutor Engine
-
-Storage (SQLite + Plugins)
-    -> Tutor Engine
+* [Why This Matters](#why-this-matters)
+* [High-Level Architecture](#high-level-architecture)
+* [Current Features](#current-features)
+* [Quick Start](#quick-start)
+* [Documentation](#documentation)
+* [Contributing](#contributing)
+* [License](#license)
+* [Status](#status)
 
 ---
 
-CURRENT FEATURES
+## Why This Matters
 
-- Plugin system with a working basic math example
-- MeshSync: Offline Bluetooth sharing of small tutoring content (hints, question chains, rap lyrics)
-- Rap Hero: Generate, lock in, and perform educational raps
-- Lesson Forge: Guided mode for students to create short lessons with peer feedback
-- Behavioral learner state tracking for adaptive responses
-- Media guidelines for videos and large content (manual import only)
+Old phones become personalized tutors for math, social studies, English, and science.
 
-See docs/media-guidelines.md for details on MeshSync sharing.
+Teachers, students, and hobbyists can contribute plugins and share effective teaching content — all while keeping everything private and offline.
 
 ---
 
-QUICK START
+## High-Level Architecture
 
-For testers / teachers:
+```mermaid
+graph TD
+    UI["UI Layer<br/>Chat + Voice + Quiz"] --> Engine["Tutor Engine<br/>Socratic + Context"]
+    Engine --> Inference["Inference Core<br/>MediaPipe • MLC-LLM • llama.cpp"]
+    Plugins["Plugins<br/>Subjects • Pedagogy • MeshSync • Rap Hero • Lesson Forge"] --> Engine
+    Storage["Storage<br/>SQLite + Plugins"] --> Engine
+```
+
+---
+
+## Current Features
+
+* **Plugin system** with a working basic-math example
+* **MeshSync**: Offline Bluetooth sharing of small tutoring content
+
+  * Hints
+  * Question chains
+  * Rap lyrics
+* **Rap Hero**: Generate, lock in, and perform educational raps
+* **Lesson Forge**: Guided mode for students to create short lessons with peer feedback
+* **Behavioral learner state tracking** for adaptive responses
+* **Media guidelines** for videos and large content (manual import only)
+
+See `docs/media-guidelines.md` for details on MeshSync sharing.
+
+---
+
+## Quick Start
+
+### Testers / Teachers
 
 1. Clone the repository
 2. Connect your Android phone (2019–2023 model recommended)
 3. Run:
-   ./gradlew assembleDebug
-4. Install the APK and test the basic math plugin
 
-For teachers / non-developers:
-- Start with PLUGINS.md
-- Try the basic math or Lesson Forge plugins
+```bash
+./gradlew assembleDebug
+```
 
-For developers:
-- Read ARCHITECTURE.md for full system design
-
-For everyone:
-- See CONTRIBUTING.md — all skill levels welcome
+4. Install the APK
+5. Test the basic-math plugin
 
 ---
 
-DOCUMENTATION
+### Teachers / Non-developers
 
-- ARCHITECTURE.md — System overview and design decisions
-- PLUGINS.md — How to create and use plugins (15-minute guide)
-- docs/media-guidelines.md — MeshSync content guidelines
-- CONTRIBUTING.md — Contribution guide
+* Start with `PLUGINS.md`
+* Try the **basic-math** or **Lesson Forge** plugins
 
 ---
 
-CONTRIBUTING
+### Developers
 
-Contributions are welcome from teachers, students, developers, and tinkerers.
-
-See CONTRIBUTING.md for details.
+* Read `ARCHITECTURE.md` for full system design
 
 ---
 
-LICENSE
+### Everyone
 
-Apache 2.0 — see LICENSE file for details.
+* See `CONTRIBUTING.md` — all skill levels are welcome
 
 ---
 
-STATUS
+## Documentation
 
-Early alpha — plugin system working, MeshSync in testing.
+* `ARCHITECTURE.md` — System overview and design decisions
+* `PLUGINS.md` — How to create and use plugins (15-minute guide)
+* `docs/media-guidelines.md` — MeshSync content guidelines
+* `CONTRIBUTING.md` — Contribution guide
+
+---
+
+## Contributing
+
+We welcome contributions from teachers, students, developers, and tinkerers.
+
+See `CONTRIBUTING.md` for details.
+
+---
+
+## License
+
+Apache 2.0 — see `LICENSE` file for details.
+
+---
+
+## Status
+
+**Early alpha** — plugin system working, MeshSync in testing.
 
 Built for the community. Feedback and pull requests are encouraged.
-"""
-
-output_path = "/mnt/data/opentutor_framework.txt"
-convert_text(text, 'plain', format='md', outputfile=output_path, extra_args=['--standalone'])
-
-output_path
