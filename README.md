@@ -7,6 +7,24 @@
 OpenTutor is a lightweight, modular, offline-first framework that converts unused Android devices (2019–2023 models with 4–8 GB RAM) into personalized Socratic learning systems. It operates entirely on-device using small, optimized language models—requiring no internet access and preserving full user privacy.
 
 ---
+## Table of Contents
+
+- [Why This Matters](#why-this-matters)
+- [Executive Summary](#executive-summary)
+- [Problem Statement](#problem-statement)
+- [Solution](#solution)
+- [Key Differentiators](#key-differentiators)
+- [High-Level Architecture](#high-level-architecture)
+- [Core Features](#core-features)
+- [Intended Impact](#intended-impact)
+- [Implementation Approach](#implementation-approach)
+- [Quick Start](#quick-start)
+- [Documentation](#documentation)
+- [Evaluation and Future Work](#evaluation-and-future-work)
+- [Contributing](#contributing)
+- [License](#license)
+- [Project Status](#project-status)
+- [Contact / Collaboration](#contact--collaboration)
 
 ## Executive Summary
 
