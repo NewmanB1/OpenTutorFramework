@@ -1,120 +1,182 @@
 # Contributing to OpenTutor Framework
 
-Thank you for wanting to help make free, private, offline tutors available on recycled Android phones! This project follows a "Linux kernel" philosophy: the core stays minimal and stable while the community builds plugins, subjects, and distros.
+Thank you for considering contributing to OpenTutor!
 
-We welcome all skill levels — you don't need to be a programmer to contribute meaningfully.
+We welcome contributions from **teachers, students, developers, recyclers, and hobbyists** — all skill levels are valuable.
 
-## Code of Conduct
-Be kind, respectful, and constructive. We want this to be an inclusive space for teachers, parents, students, developers, and recyclers.
+> *“The Linux of tutorbots” grows through real-world teaching experience combined with practical engineering.*
+
+---
 
 ## Ways to Contribute
 
-### 1. As a Teacher / Educator (No Coding Required)
-- Add or improve **subject modules** (prompt templates + knowledge bundles for math, history, languages, etc.)
-- Share **pedagogy ideas** or example conversations
-- Review existing modules for educational accuracy
-- See [docs/pedagogy-guide.md](docs/pedagogy-guide.md) and [PLUGINS.md](PLUGINS.md)
+You can help in many ways:
 
-### 2. As a Developer
-- Implement a new inference backend
-- Improve the Tutor Engine
-- Add features to the plugin system
-- Fix bugs or improve performance on old hardware
-- Start by reading [ARCHITECTURE.md](ARCHITECTURE.md)
+### Teaching & Pedagogy (No Coding Required)
 
-### 3. As a Tester / Recycler
-- Test pre-built APKs on real discarded phones (2019–2023 models)
-- Report performance numbers, heat issues, or battery impact
-- Document which phones work well
-- See [docs/hardware-testing.md](docs/hardware-testing.md)
+* Share effective Socratic prompts
+* Contribute lesson patterns or teaching sequences
+* Document classroom-tested approaches
 
-### 4. Other Ways
-- Improve documentation
-- Create issue templates or GitHub workflows
-- Spread the word (share success stories of turning old phones into tutors)
-- Suggest new "distros" (e.g., a math-only version for middle school)
+---
 
-## How to Get Started (Small Steps)
+### Plugin Development
 
-1. **Look for "good first issues"** — We will label them clearly.
-2. **Open an issue** first if you're planning something bigger than a small fix (especially for new plugins or major changes).
-3. **Fork the repo** and create a branch with a clear name (e.g., `add-math-plugin` or `improve-voice-ui`).
-4. **Submit a Pull Request** with a good description of what you changed and why.
+* Create subject plugins (math, history, science, etc.)
+* Add new pedagogy styles
+* Extend creative modes (e.g., Rap Hero)
+
+---
+
+### Hardware Testing
+
+* Test on real recycled Android phones
+* Report performance using `docs/hardware-testing.md`
+
+---
+
+### Documentation
+
+* Improve clarity and structure
+* Add examples or tutorials
+* Translate content for broader access
+
+---
+
+### Code Contributions
+
+* Fix bugs
+* Improve performance (especially inference)
+* Enhance UI/UX
+
+---
+
+### Feedback
+
+* Share what works well
+* Report friction points on real devices
+* Suggest improvements based on actual use
+
+---
+
+## Getting Started
+
+1. Fork the repository
+2. Clone your fork:
+
+```bash id="4u8n3k"
+git clone https://github.com/YOUR_USERNAME/OpenTutorFramework.git
+```
+
+3. Create a new branch:
+
+```bash id="k92p1x"
+git checkout -b feature/my-contribution
+```
+
+---
 
 ## Development Setup
-- Clone the repo
-- Open in Android Studio
-- Build the minimal example: `./gradlew assembleDebug`
-- Test on a physical device (emulator is ok for early UI work, but real old phones are required for performance validation)
 
-## Pull Request Guidelines
-- Keep changes small and focused
-- Update relevant documentation
-- Ensure the app still respects the resource budget in [ARCHITECTURE.md](ARCHITECTURE.md)
-- Test on at least one target-class phone if possible
-- Reference any related issues
+The project uses Android (Kotlin + Gradle).
 
-Plugin Loading
-At startup, the core:
+Build the debug APK:
 
-Scans the plugins/ directory (and assets folder in the APK).
-Reads all manifest.json files.
-Registers available subjects, pedagogy styles, and other modules.
-Lets the user (or default settings) choose which ones to activate.
+```bash id="p0x7mn"
+./gradlew assembleDebug
+```
 
-Plugins are loaded as read-only assets — they are safe and easy to update via new APK releases or sideloading.
-Technical Details for Developers
+Install the APK on a physical Android device
+(2019–2023 models recommended for testing).
 
-Plugins are discovered at runtime via a simple PluginRegistry class.
-The Tutor Engine combines the selected subject prompt + pedagogy rules + user input into a single prompt for the Inference Core.
-All communication uses the JSON interfaces defined in ARCHITECTURE.md.
-Advanced plugins can include small Kotlin/Java classes if needed (e.g., for custom scoring logic), but most can be pure JSON + text.
+For system design details, see `ARCHITECTURE.md`.
 
-Best Practices
+---
 
-Keep prompts concise — old phones have limited context windows.
-Use permissive licenses (MIT, Apache 2.0, CC0, CC-BY-SA).
-Test on real low-end hardware (see docs/hardware-testing.md).
-Include example conversations in the examples/ folder so others can see how your plugin behaves.
-Document any prerequisites (e.g., "requires at least 4 GB RAM for this knowledge bundle").
+## Documentation Guidelines
 
-Examples Included in This Repo
+Please keep documentation:
 
-examples/minimal-math-plugin/ — A complete working example you can copy
-examples/socratic-pedagogy/ — Default Socratic style
+* Clear and beginner-friendly
+* Practical and example-driven
+* Accessible to non-developers
 
-How to Submit a Plugin
+Relevant guides:
 
-Create your plugin following the structure above.
-Open a Pull Request with your plugin folder.
-Add a short description in the PR: what it teaches, target audience, and any testing notes.
-We will review it for resource usage and educational value.
+* `PLUGINS.md` — Plugin creation (includes 15-minute guide)
+* `docs/pedagogy-guide.md` — Socratic + adaptive teaching
+* `docs/hardware-testing.md` — Real-device testing
+* `docs/media-guidelines.md` — MeshSync content rules
 
-See CONTRIBUTING.md for general contribution guidelines.
+---
 
-This plugin system is deliberately simple so that a teacher with no programming experience can contribute a useful module in one afternoon, while still allowing advanced developers to extend it deeply.
-Let's build a rich ecosystem of open tutoring modules together — turning discarded phones into personalized tutors for students everywhere.
-Version: 0.1
-Last updated: April 2026
-textThis file is welcoming to non-technical contributors while still giving developers the details they need. It directly references your existing docs (`ARCHITECTURE.md` and `CONTRIBUTING.md`) to create a cohesive set.
+## Submitting Changes
 
-### Quick Next Steps After Adding This
-1. Create the folder `examples/minimal-math-plugin/` with a simple manifest and prompt so people have something concrete to copy.
-2. Update your README.md to link to this new PLUGINS.md prominently.
+1. Make your changes
+2. Test on a real device when possible
+3. Commit with a clear message:
 
-Would you like me to:
-- Write a sample `minimal-math-plugin` with actual files?
-- Draft `pedagogy-guide.md` next?
-- Create `docs/hardware-testing.md`?
-- Or tweak anything in this PLUGINS.md (e.g., make it shorter, add more examples, change tone)?
+```
+Add socratic questioning prompts for history plugin
+```
 
-Just tell me your preference and we'll keep the momentum going with the next small, useful pie
+4. Push to your branch
+5. Open a Pull Request
 
+We’ll review your PR and work with you to get it merged.
 
-## Questions?
-- Use [GitHub Discussions](link-to-discussions) for questions or ideas
-- Open an issue for bugs or feature requests
+---
 
-We value effort and intention more than perfection. Let's turn e-waste into opportunity together!
+## Code of Conduct
 
-Last updated: April 2026
+* Be respectful and constructive
+* Assume good intent
+* Focus on improving learning and accessibility
+* Credit original ideas when building on others’ work
+
+---
+
+## Questions & Discussions
+
+* Open an **Issue** for bugs or feature requests
+* Use **GitHub Discussions** for questions or ideas
+
+We especially encourage teachers to share what works (or doesn’t) with real students.
+
+---
+
+## Where to Start
+
+If you’re new, try one of these:
+
+* Test the `basic-math` plugin and give feedback
+* Run OpenTutor on an old Android phone and submit a hardware report
+* Improve a pedagogy prompt
+* Help complete a TODO in the documentation
+
+---
+
+## Project Status
+
+OpenTutor is in **early alpha**.
+
+That means:
+
+* Things may break
+* Simplicity is preferred over complexity
+* Real-world feedback is extremely valuable
+
+---
+
+## Final Note
+
+Your contribution — whether it’s:
+
+* a well-tested prompt
+* a hardware test report
+* a documentation fix
+* or a code improvement
+
+…helps turn discarded phones into **powerful, private learning tools**.
+
+Thank you for helping build something meaningful.
