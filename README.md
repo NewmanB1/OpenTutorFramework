@@ -2,36 +2,61 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
-**The Linux of tutorbots** — A lightweight, modular, offline-first framework that turns discarded Android phones (2019–2023 models with 4–8 GB RAM) into private Socratic tutors.
+**Transforming discarded smartphones into private, offline AI tutors for equitable education.**
 
-No cloud required. Runs entirely on-device with small quantized LLMs. Designed for e-waste reuse, accessibility, and community-driven growth.
-
----
-
-## Table of Contents
-
-* [Why This Matters](#why-this-matters)
-* [High-Level Architecture](#high-level-architecture)
-* [Current Features](#current-features)
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [Contributing](#contributing)
-* [License](#license)
-* [Status](#status)
+OpenTutor is a lightweight, modular, offline-first framework that converts unused Android devices (2019–2023 models with 4–8 GB RAM) into personalized Socratic learning systems. It operates entirely on-device using small, optimized language models—requiring no internet access and preserving full user privacy.
 
 ---
 
-## Why This Matters
+## Executive Summary
 
-Old phones become personalized tutors for math, social studies, English, and science.
+Access to high-quality, personalized education remains uneven, particularly in low-resource and connectivity-limited environments. At the same time, millions of functional smartphones are discarded each year.
 
-Teachers, students, and hobbyists can contribute plugins and share effective teaching content — all while keeping everything private and offline.
+**OpenTutor addresses both challenges simultaneously:**
+
+* Repurposes e-waste into educational infrastructure
+* Provides private, offline AI tutoring
+* Enables educators to create and share content without centralized control
+
+The project is designed as an open, community-driven ecosystem where teachers, students, and developers collaboratively build and refine educational tools.
+
+---
+
+## Problem Statement
+
+* **Digital inequity**: Many learners lack consistent internet access for modern AI tools
+* **Privacy concerns**: Cloud-based tutoring systems require sensitive student data
+* **Rigid pedagogy**: Most edtech platforms prioritize answers over reasoning
+* **E-waste growth**: Millions of usable devices are discarded annually
+
+These issues intersect most strongly in underserved communities.
+
+---
+
+## Solution
+
+OpenTutor transforms low-cost, secondhand Android devices into **offline-first Socratic tutors** that:
+
+* Run entirely on-device (no cloud dependency)
+* Guide students through reasoning instead of providing answers
+* Adapt to learner behavior over time
+* Support extensible, educator-created content via plugins
+
+---
+
+## Key Differentiators
+
+* **Offline-first architecture** → fully functional without internet access
+* **Privacy by design** → no external data transmission
+* **Socratic tutoring model** → emphasizes critical thinking and inquiry
+* **Device reuse model** → converts e-waste into educational tools
+* **Open plugin ecosystem** → educators directly shape pedagogy
 
 ---
 
 ## High-Level Architecture
 
-```mermaid
+```mermaid id="yk5cdb"
 graph TD
     UI["UI Layer<br/>Chat + Voice + Quiz"] --> Engine["Tutor Engine<br/>Socratic + Context"]
     Engine --> Inference["Inference Core<br/>MediaPipe • MLC-LLM • llama.cpp"]
@@ -41,71 +66,114 @@ graph TD
 
 ---
 
-## Current Features
+## Core Features
 
-* **Plugin system** with a working basic-math example
-* **MeshSync**: Offline Bluetooth sharing of small tutoring content
+* **Plugin System**
+  Modular subject and pedagogy extensions (e.g., math, literacy, science)
+
+* **MeshSync (Offline Sharing)**
+  Bluetooth-based transfer of small educational content:
 
   * Hints
-  * Question chains
-  * Rap lyrics
-* **Rap Hero**: Generate, lock in, and perform educational raps
-* **Lesson Forge**: Guided mode for students to create short lessons with peer feedback
-* **Behavioral learner state tracking** for adaptive responses
-* **Media guidelines** for videos and large content (manual import only)
+  * Question sequences
+  * Creative learning artifacts (e.g., rap lyrics)
 
-See `docs/media-guidelines.md` for details on MeshSync sharing.
+* **Rap Hero**
+  Supports creative expression through educational rap generation and performance
+
+* **Lesson Forge**
+  Enables students to create and share their own lessons with peer feedback
+
+* **Adaptive Learning State**
+  Tracks learner behavior to tailor responses dynamically
+
+* **Media Constraints Model**
+  Ensures large content (video, etc.) is handled through intentional, manual workflows
 
 ---
 
-## Quick Start
+## Intended Impact
 
-### Testers / Teachers
+**Short-term:**
 
-1. Clone the repository
-2. Connect your Android phone (2019–2023 model recommended)
-3. Run:
+* Provide accessible tutoring tools in low-connectivity environments
+* Enable educators to experiment with AI-assisted pedagogy
 
-```bash
+**Medium-term:**
+
+* Build a distributed ecosystem of shared educational content
+* Reduce dependency on centralized edtech platforms
+
+**Long-term:**
+
+* Establish a global, open infrastructure for personalized learning
+* Reframe discarded consumer devices as community educational assets
+
+---
+
+## Implementation Approach
+
+### Phase 1 (Current)
+
+* Functional plugin system
+* On-device inference integration
+* Early MeshSync prototype
+
+### Phase 2
+
+* Stability across a wider range of devices
+* Expanded educator tooling (Lesson Forge)
+* Pilot deployments in classrooms or community programs
+
+### Phase 3
+
+* Scaled content ecosystem
+* Community-driven plugin marketplace
+* Measurable learning outcome studies
+
+---
+
+## Quick Start (Technical)
+
+```bash id="xk1z8u"
 ./gradlew assembleDebug
 ```
 
-4. Install the APK
-5. Test the basic-math plugin
-
----
-
-### Teachers / Non-developers
-
-* Start with `PLUGINS.md`
-* Try the **basic-math** or **Lesson Forge** plugins
-
----
-
-### Developers
-
-* Read `ARCHITECTURE.md` for full system design
-
----
-
-### Everyone
-
-* See `CONTRIBUTING.md` — all skill levels are welcome
+1. Clone the repository
+2. Connect a compatible Android device (2019–2023 recommended)
+3. Build and install the APK
+4. Test included plugins (e.g., basic math)
 
 ---
 
 ## Documentation
 
-* `ARCHITECTURE.md` — System overview and design decisions
-* `PLUGINS.md` — How to create and use plugins (15-minute guide)
-* `docs/media-guidelines.md` — MeshSync content guidelines
-* `CONTRIBUTING.md` — Contribution guide
+* `ARCHITECTURE.md` — System design and technical overview
+* `PLUGINS.md` — Plugin development guide
+* `docs/media-guidelines.md` — Content sharing constraints
+* `CONTRIBUTING.md` — Contribution guidelines
+
+---
+
+## Evaluation and Future Work
+
+Future development will include:
+
+* Formal evaluation of learning outcomes
+* Usability studies in classroom environments
+* Optimization for lower-end hardware
+* Expansion of subject-specific pedagogical plugins
 
 ---
 
 ## Contributing
 
-We welcome contributions from teachers, students, developers, and tinkerers.
+We actively welcome contributions from:
+
+* Educators
+* Students
+* Developers
+* Community organizations
 
 See `CONTRIBUTING.md` for details.
 
@@ -117,8 +185,22 @@ Apache 2.0 — see `LICENSE` file for details.
 
 ---
 
-## Status
+## Project Status
 
-**Early alpha** — plugin system working, MeshSync in testing.
+**Early Alpha**
 
-Built for the community. Feedback and pull requests are encouraged.
+Core systems are functional, with ongoing testing of MeshSync and plugin expansion.
+
+---
+
+## Contact / Collaboration
+
+We are actively seeking:
+
+* Pilot partners (schools, libraries, community centers)
+* Educators interested in plugin development
+* Contributors in mobile, AI, and education
+
+---
+
+**OpenTutor is built for communities, not platforms.**
