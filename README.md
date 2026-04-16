@@ -1,6 +1,4 @@
-from pypandoc import convert_text
-
-text = """OpenTutor Framework
+"""OpenTutor Framework
 
 The Linux of tutorbots — A lightweight, modular, offline-first framework that turns discarded Android phones (2019–2023 models with 4–8 GB RAM) into private Socratic tutors.
 
