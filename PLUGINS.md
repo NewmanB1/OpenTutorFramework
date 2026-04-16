@@ -1,94 +1,223 @@
 # Plugins in OpenTutor Framework
 
-The plugin system is the heart of the "Linux of tutorbots" philosophy: **the core stays minimal**, while everything educational is built as interchangeable plugins. This allows teachers, parents, and subject experts to contribute powerful tutoring modules without touching the core code.
+The OpenTutor plugin system is the core of the **“Linux of tutorbots”** architecture.
 
-## Why Plugins?
+The system core remains intentionally minimal. All subjects, teaching methods, accessibility features, and content bundles are implemented as modular plugins.
 
-- Teachers can add a new subject (e.g., fractions, world history, Spanish verbs) in minutes.
-- Developers can create new pedagogy styles or accessibility features.
-- Anyone can bundle open educational resources.
-- Community "distros" can combine plugins into specialized APKs (e.g., "OpenTutor-Math-Elementary" or "RecycleTutor-ESL").
+This enables educators, developers, and communities to build and share educational tools without modifying the core engine.
 
-The core never hard-codes any subject or teaching method — it only provides the engine that loads and runs plugins.
+---
+
+## Design Principles
+
+* **Separation of core and pedagogy**: The engine handles reasoning and execution; plugins define teaching behavior and content
+* **Composability**: Subject + pedagogy + accessibility layers can be combined
+* **Offline-first design**: Plugins must function without internet access
+* **Low-resource optimization**: All plugins must be suitable for mobile-class hardware
+* **Community extensibility**: Non-developers can contribute meaningful educational modules
+
+---
+
+## Why Plugins Matter
+
+The plugin system enables:
+
+* Rapid creation of new subjects (e.g., fractions, biology, Spanish verbs)
+* New pedagogical approaches without core changes
+* Packaging of open educational resources
+* Community-defined “distros” of education (e.g., math-only, ESL-focused, literacy-first builds)
+
+The core engine does not contain subject knowledge or pedagogy logic. It only loads and executes plugins.
+
+---
 
 ## Plugin Types
 
-| Plugin Type              | Purpose                                      | Who Typically Creates It          | File Format                  |
-|--------------------------|----------------------------------------------|-----------------------------------|------------------------------|
-| **Subject Module**       | Specific topic (math, biology, history, etc.) | Teachers, subject experts        | JSON + optional text files   |
-| **Pedagogy Module**      | Teaching style (Socratic, Montessori, etc.)  | Educators, pedagogy enthusiasts  | JSON                         |
-| **Accessibility Plugin** | Voice-first, large text, simplified language | Accessibility advocates          | JSON + optional Kotlin       |
-| **Knowledge Bundle**     | Open textbooks, facts, examples              | Anyone with CC0/permissive content | Plain text / Markdown files  |
-| **UI Skin**              | Custom themes or input methods               | Designers / Developers           | Android resources            |
+| Type                 | Purpose                                                 | Primary Contributors          | Format                 |
+| -------------------- | ------------------------------------------------------- | ----------------------------- | ---------------------- |
+| Subject Module       | Defines a subject or domain of knowledge                | Teachers, subject experts     | JSON + optional text   |
+| Pedagogy Module      | Defines teaching behavior and interaction style         | Educators, pedagogy designers | JSON                   |
+| Accessibility Module | Adapts tutoring for accessibility needs                 | Accessibility advocates       | JSON + optional Kotlin |
+| Knowledge Bundle     | Static educational content (textbooks, facts, examples) | Open content contributors     | Markdown / text        |
+| UI Theme             | Visual or interaction customization                     | Designers, developers         | Android resources      |
 
-## How to Create a Plugin (15-Minute Guide for Non-Developers)
+---
 
-### 1. Subject Module (Most Common)
+## Plugin Structure (Subject Module)
 
-Create a folder inside `plugins/subjects/` with this structure:
+All subject plugins follow a standardized directory format:
 
-## Examples Included
+```
+my-awesome-subject/
+├── manifest.json          # Required: metadata and configuration
+├── prompts/               # Optional: teaching prompt templates
+│   └── socratic.txt
+├── content/               # Optional: structured knowledge or hints
+├── examples/              # Optional: sample interactions
+└── README.md              # Recommended: usage and testing guide
+```
 
-- `plugins/subjects/basic-math/` — A complete working example for elementary arithmetic (ready to copy and modify)
+---
 
-- ## Sync Plugins
+## Creating a Plugin (Beginner Guide)
 
-### Mesh Learning (Doorway MeshSync)
+### Step 1 — Start from a Template
 
-The `mesh-learning` plugin enables phones to exchange small, high-value tutoring content via Bluetooth or Nearby Connections when passing a school or library doorway.
+Copy an existing plugin:
 
-**What it shares:**
-- Short hint sequences (math)
-- Socratic question chains (social studies, science, English)
-- Rap lyrics and performance tips (Rap Hero mode)
-- Success metadata (e.g., "this hint helped 87% of students")
+```
+plugins/subjects/basic-math/
+```
 
-**Important limits:**
-- Total payload per pass: ~150 KB maximum (typically 8–15 small JSON files)
-- Not suitable for videos or large media (use USB or Quick Share for those)
+Rename it to your subject (e.g., `world-history` or `spanish-verbs`).
 
-See `plugins/sync/mesh-learning/` for the current implementation and examples.
+---
 
-This feature allows the tutorbot to improve over time through real classroom usage while staying fully offline by default.
+### Step 2 — Configure Metadata
 
-### Rap Hero & Lyric Mastery
+Edit `manifest.json` with:
 
-The `rap-hero` plugin enables generation, lock-in, performance, and sharing of educational rap battles.
+* Name
+* Version
+* Subject domain
+* Supported pedagogy modules
 
-**Key features:**
-- Generate short, catchy rap battles that teach accurate facts (history, science, math, etc.)
-- Teacher "lock-in" mode for class standardization
-- Rap Hero performance mode (students practice and perform the lyrics)
-- Easy sharing of best raps via JSON files (manual or future MeshSync)
+---
 
-See `plugins/pedagogy/rap-hero/` for the current implementation and examples.
+### Step 3 — Customize Content
 
-This plugin brings high-engagement, memorable learning while staying fully compatible with the lightweight architecture.
+Modify or add:
 
-### Lesson Forge - Kid Creator Mode
+* Prompt templates
+* Hint chains
+* Example problems or explanations
 
-The `lesson-forge` plugin guides students to create their own short, measurable lessons or activities with step-by-step coaching from the tutor.
+---
 
-**Key features:**
-- Simple 5-part lesson template (Objective, Fun Hook, Practice Question, Transfer Task, Optional Fun Twist)
-- Tutor acts as a patient coach, asking one question at a time
-- Peer review mode where students give kind, useful feedback on each other’s creations
-- Created lessons are saved as small JSON files that can be shared via Quick Share or MeshSync
+### Step 4 — Test Locally
 
-See `plugins/pedagogy/lesson-forge/` for the current implementation and examples.
+Build and install the APK:
 
-This plugin turns students from passive learners into active co-creators, deepening understanding through teaching while keeping the process fun and low-effort.
+```bash id="a91k2p"
+./gradlew assembleDebug
+```
 
-### Peer Lesson Forge Gallery
+The plugin should load automatically at runtime.
 
-The Peer Gallery extends Lesson Forge by letting students browse, try, rate, and improve lessons created by their peers.
+---
 
-**Key features:**
-- Students can view short peer-created lessons (title, objective, fun hook, practice question, transfer task)
-- Simple rating system: "Like", "Works for me", "Needs improvement"
-- Ratings feed back into effectiveness mapping and help the tutor recommend better content
-- Lessons can be shared via MeshSync (small JSON) or manual Quick Share
+## Pedagogy Modules
 
-This creates a positive feedback loop where students learn deeply by teaching and refining each other’s work.
+Pedagogy plugins define *how teaching happens*, independent of subject matter.
 
-See `plugins/pedagogy/lesson-forge/` for the current implementation, including the gallery system prompt and sample entries.
+Examples include:
+
+* Socratic questioning
+* Scaffolded learning
+* Example-driven instruction
+
+See `docs/pedagogy-guide.md` for design standards and implementation guidance.
+
+---
+
+## Included Examples
+
+* `plugins/subjects/basic-math/` — Reference implementation for elementary arithmetic
+* `plugins/pedagogy/socratic/` — Default Socratic teaching behavior
+
+---
+
+## Mesh Learning (Offline Exchange System)
+
+The `mesh-learning` plugin enables offline exchange of small educational artifacts via Bluetooth or Nearby Connections.
+
+### Shared Content Types
+
+* Hint sequences
+* Socratic question chains
+* Creative learning content (e.g., Rap Hero outputs)
+* Lightweight usage metadata (e.g., effectiveness signals)
+
+### Constraints
+
+* Maximum payload per transfer: ~150 KB
+* Optimized for brief, high-value educational artifacts
+* Not intended for video or large media
+
+This system supports decentralized improvement of educational content without requiring internet access.
+
+---
+
+## Creative Learning Plugins
+
+### Rap Hero (Educational Rhythm System)
+
+A creative learning mode that encodes educational content into rhythmic, memorable formats.
+
+Capabilities:
+
+* Generate factually accurate educational rap content
+* Support rehearsal and performance modes
+* Enable teacher-approved “locked” versions for classroom use
+* Share content as lightweight JSON artifacts
+
+---
+
+### Lesson Forge (Student Creation Mode)
+
+A guided system for student-generated lessons.
+
+Structure:
+
+* Objective
+* Engagement hook
+* Practice question
+* Transfer task
+* Optional creative extension
+
+The tutor acts as a structured coach, guiding step-by-step creation.
+
+Output is stored as portable JSON artifacts.
+
+---
+
+### Peer Learning Gallery
+
+An extension of Lesson Forge enabling peer discovery and iteration.
+
+Features:
+
+* Browse student-created lessons
+* Simple feedback signals (e.g., “works”, “improve”)
+* Recommendation based on aggregated feedback
+* Lightweight sharing via MeshSync or manual transfer
+
+This system reinforces learning-through-teaching loops.
+
+---
+
+## Contribution Workflow
+
+1. Read `docs/pedagogy-guide.md`
+2. Test on real hardware (`docs/hardware-testing.md`)
+3. Create or modify a plugin
+4. Submit via Pull Request
+
+Even small contributions (a single prompt file or lesson pattern) are valuable.
+
+---
+
+## Design Intent
+
+OpenTutor plugins are designed to make **pedagogy modular, testable, and shareable**.
+
+The long-term goal is a community-driven ecosystem where educational approaches are versioned, improved, and distributed like software.
+
+---
+
+## Next Steps
+
+* Explore `basic-math` as a reference implementation
+* Review pedagogy design guidelines
+* Run hardware tests to validate performance constraints
+* Submit first plugin contribution (even minimal ones are welcome)
