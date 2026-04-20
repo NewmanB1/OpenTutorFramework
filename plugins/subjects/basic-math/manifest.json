@@ -2,12 +2,36 @@
   "id": "basic-math",
   "type": "subject",
   "name": "Basic Mathematics",
-  "description": "Addition, subtraction, multiplication, division, and simple word problems for elementary students (ages 6-11)",
+  "description": "Addition, subtraction, multiplication, division, fractions, and simple word problems for elementary students (ages 6-11)",
   "target_age": "6-11",
   "target_grade": "1-5",
   "pedagogy_default": "socratic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "OpenTutorFramework Community",
   "license": "CC0-1.0",
-  "tags": ["arithmetic", "elementary-math"]
+  "tags": ["arithmetic", "elementary-math", "fractions"],
+  "structure": {
+    "has_config": false,
+    "has_lessons": false,
+    "has_exercises": false,
+    "has_tests": false,
+    "has_assets": false,
+    "has_examples": true
+  },
+  "files": {
+    "system_prompt": "system-prompt.txt",
+    "glossary": "glossary.json",
+    "content_files": [
+      "addition.txt",
+      "fractions.txt"
+    ],
+    "examples": [
+      "examples/conversation1.json"
+    ]
+  },
+  "entry_points": {
+    "conversation_example": "examples/conversation1.json"
+  },
+  "status": "partial",
+  "completeness_notes": "Core manifest, system prompt, glossary, and example content are present. Missing standard plugin subdirectories (config/, lessons/, exercises/, tests/, assets/). Ready for basic testing but not full production use."
 }
