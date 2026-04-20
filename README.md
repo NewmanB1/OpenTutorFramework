@@ -91,11 +91,7 @@ graph TD
 ---
 
 ## Current Implementation Status
-
-```
-
-## Current Implementation Status
-
+```mermaid
 | Plugin / Component                  | Path                                      | Status          | Completeness Notes |
 |-------------------------------------|-------------------------------------------|-----------------|--------------------|
 | Core Framework (Android + Gradle)   | `/`                                       | Functional      | Builds and installs APK |
@@ -113,8 +109,6 @@ graph TD
 * **Partial** = Core files present, but incomplete structure/features  
 * **Prototype** = Basic proof-of-concept  
 * **Planned** = Mentioned in docs/architecture but not coded yet
-
-```
 
 ---
 
