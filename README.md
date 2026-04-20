@@ -109,6 +109,7 @@ graph TD
 * **Partial** = Core files present, but incomplete structure/features  
 * **Prototype** = Basic proof-of-concept  
 * **Planned** = Mentioned in docs/architecture but not coded yet
+```
 
 ---
 
