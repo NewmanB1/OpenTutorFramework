@@ -57,6 +57,7 @@ OpenTutor transforms low-cost, secondhand Android devices into **offline-first S
 ---
 
 ## Architecture
+```mermaid
 graph TD
     UI["UI Layer<br/>Chat + Voice + Quiz"] --> Engine["Tutor Engine<br/>Socratic + Context"]
     Engine --> Inference["Inference Core<br/>MediaPipe • MLC-LLM • llama.cpp"]
