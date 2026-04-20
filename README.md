@@ -63,7 +63,7 @@ graph TD
     Engine --> Inference["Inference Core<br/>MediaPipe • MLC-LLM • llama.cpp"]
     Plugins["Plugins<br/>Subjects • Pedagogy • MeshSync • Rap Hero • Lesson Forge"] --> Engine
     Storage["Storage<br/>SQLite + Plugins"] --> Engine
-
+```
 ---
 
 ## Core Features
