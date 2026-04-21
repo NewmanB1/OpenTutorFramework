@@ -9,7 +9,7 @@ export default function SystemCompletenessDashboard() {
 
   // 👇 THIS is where the fetch goes
   useEffect(() => {
-    fetch("/dist/docs.snapshot.json")
+    fetch("/docs.snapshot.json")
       .then((res) => res.json())
       .then(setSnapshot)
       .catch((err) => console.error("Failed to load snapshot:", err));
