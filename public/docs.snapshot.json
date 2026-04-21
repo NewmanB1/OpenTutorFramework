@@ -1,0 +1,85 @@
+{
+  "plugins": [
+    {
+      "name": "Core Framework (Android + Gradle)",
+      "path": "/",
+      "status": "Production-Ready",
+      "testCoverage": "Partial",
+      "lastVerifiedCommit": "unknown",
+      "knownGaps": "Some integration tests missing",
+      "notes": "Builds and installs APK successfully"
+    },
+    {
+      "name": "Plugin System",
+      "path": "plugins/",
+      "status": "Partial",
+      "testCoverage": "None",
+      "lastVerifiedCommit": "unknown",
+      "knownGaps": "Dynamic validation, error handling, versioning",
+      "notes": "Early loading system implemented"
+    },
+    {
+      "name": "Subjects Container",
+      "path": "plugins/subjects/",
+      "status": "Verified",
+      "testCoverage": "None",
+      "lastVerifiedCommit": "unknown",
+      "knownGaps": "No enforced schema for subject modules",
+      "notes": "Structural scaffolding complete"
+    },
+    {
+      "name": "Basic Math",
+      "path": "plugins/subjects/basic-math/",
+      "status": "Partial",
+      "testCoverage": "None",
+      "lastVerifiedCommit": "unknown",
+      "knownGaps": "Missing config/, lessons/, exercises/, tests/, metadata normalization",
+      "notes": "Core content + examples exist"
+    },
+    {
+      "name": "Pedagogy Plugins",
+      "path": "plugins/pedagogy/",
+      "status": "Not Started",
+      "testCoverage": "None",
+      "lastVerifiedCommit": "unknown",
+      "knownGaps": "No implementation yet",
+      "notes": "Directory scaffold only"
+    },
+    {
+      "name": "MeshSync",
+      "path": "plugins/sync/",
+      "status": "Prototype",
+      "testCoverage": "None",
+      "lastVerifiedCommit": "unknown",
+      "knownGaps": "Reliability, conflict resolution, scalability",
+      "notes": "Early offline/Bluetooth sync proof-of-concept"
+    },
+    {
+      "name": "Rap Hero",
+      "path": "N/A",
+      "status": "Not Started",
+      "testCoverage": "None",
+      "lastVerifiedCommit": "unknown",
+      "knownGaps": "Not implemented",
+      "notes": "Architecture reference only"
+    },
+    {
+      "name": "Lesson Forge",
+      "path": "N/A",
+      "status": "Not Started",
+      "testCoverage": "None",
+      "lastVerifiedCommit": "unknown",
+      "knownGaps": "Not implemented",
+      "notes": "Architecture reference only"
+    },
+    {
+      "name": "Inference Core (MediaPipe / llama.cpp)",
+      "path": "core module",
+      "status": "Verified",
+      "testCoverage": "Partial",
+      "lastVerifiedCommit": "unknown",
+      "knownGaps": "Hardware optimization + benchmarking gaps",
+      "notes": "On-device inference integrated"
+    }
+  ]
+}
