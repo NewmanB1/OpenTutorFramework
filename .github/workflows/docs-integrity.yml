@@ -1,0 +1,39 @@
+name: Documentation Integrity Guard
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+      - "PLUGINS.md"
+      - "docs/IMPLEMENTATION_STATUS.md"
+      - "plugins/**"
+      - "src/**"
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Validate IMPLEMENTATION_STATUS.md schema
+        run: |
+          python scripts/validate_status_schema.py
+
+      - name: Check for documentation drift
+        run: |
+          python scripts/check_doc_drift.py
+
+      - name: Enforce status file update on plugin/README changes
+        run: |
+          python scripts/enforce_status_sync.py
