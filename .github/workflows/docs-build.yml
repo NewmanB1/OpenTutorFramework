@@ -1,0 +1,41 @@
+name: Documentation Build Pipeline
+
+on:
+  push:
+    paths:
+      - "docs/**"
+      - "scripts/**"
+      - "README.md"
+      - "PLUGINS.md"
+      - "plugins/**"
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install markdown-it
+
+      - name: Run AST Drift Check
+        run: node scripts/check_doc_drift_ast.js
+
+      - name: Validate Status Schema
+        run: node scripts/validate_status_schema.js
+
+      - name: Build Documentation Graph
+        run: node scripts/build_docs_graph.js
+
+      - name: Upload Documentation Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-snapshot
+          path: dist/
