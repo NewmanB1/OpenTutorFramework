@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "docs:check": "node scripts/check_doc_drift_ast.js"
+  }
+}
