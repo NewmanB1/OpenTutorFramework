@@ -28,6 +28,16 @@
 | **Hardware Testing** | `docs/hardware-testing.md` | Partial | 2026-04 | More device logs needed |
 | **Media Guidelines** | `docs/media-guidelines.md` | Verified | 2026-04 | None |
 | **Pedagogy Guide** | `docs/pedagogy-guide.md` | Partial | 2026-04 | Socratic examples list |
+| Authorization Spec | docs/AUTHORIZATION_AND_GOVERNANCE_SPEC_v1.md | Verified |
+| Knowledge Bundle Spec | docs/KNOWLEDGE_BUNDLE_SPEC_v1.1.md | Verified |
+| Plugin Spec | docs/PLUGIN_SPEC_v1.2.md | Verified |
+| POA&M | docs/POA&M.md | Production-Ready |
+| Requirements | docs/REQUIREMENTS.md | Verified |
+| Runtime Engine Spec | docs/RUNTIME_COMPOSITION_ENGINE_SPEC_v1.1.md | Verified |
+| System Spec | docs/SYSTEM_SPEC_v1.2.md | Verified |
+| Hardware Testing | docs/hardware-testing.md | Partial |
+| Media Guidelines | docs/media-guidelines.md | Verified |
+| Pedagogy Guide | docs/pedagogy-guide.md | Partial |
 
 ---
 
