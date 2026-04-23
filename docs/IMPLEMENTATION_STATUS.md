@@ -9,7 +9,7 @@
 
 ## Current Implementation Status
 
-| Component / Plugin | Path | Status | Last Verified | Known Gaps |
+| Component | Path | Status | Last Verified | Known Gaps |
 | :--- | :--- | :--- | :--- | :--- |
 | **Core Framework** | `package.json` | Production-Ready | 2026-04 | Integration tests for Gradle builds |
 | **Plugin System** | `plugins/` | Partial | 2026-04 | Dynamic validation, versioning |
@@ -28,23 +28,13 @@
 | **Hardware Testing** | `docs/hardware-testing.md` | Partial | 2026-04 | More device logs needed |
 | **Media Guidelines** | `docs/media-guidelines.md` | Verified | 2026-04 | None |
 | **Pedagogy Guide** | `docs/pedagogy-guide.md` | Partial | 2026-04 | Socratic examples list |
-| Authorization Spec | docs/AUTHORIZATION_AND_GOVERNANCE_SPEC_v1.md | Verified |
-| Knowledge Bundle Spec | docs/KNOWLEDGE_BUNDLE_SPEC_v1.1.md | Verified |
-| Plugin Spec | docs/PLUGIN_SPEC_v1.2.md | Verified |
-| POA&M | docs/POA&M.md | Production-Ready |
-| Requirements | docs/REQUIREMENTS.md | Verified |
-| Runtime Engine Spec | docs/RUNTIME_COMPOSITION_ENGINE_SPEC_v1.1.md | Verified |
-| System Spec | docs/SYSTEM_SPEC_v1.2.md | Verified |
-| Hardware Testing | docs/hardware-testing.md | Partial |
-| Media Guidelines | docs/media-guidelines.md | Verified |
-| Pedagogy Guide | docs/pedagogy-guide.md | Partial |
 
 ---
 
 ## Status Definitions
 * **Not Started**: No implementation exists.
 * **Prototype**: Proof-of-concept exists, not stable.
-* **Partial**: Core functionality exists but incomplete or unvalidated.
+* **Partial**: Core functionality exists but incomplete.
 * **Verified**: Works as intended in controlled conditions.
 * **Production-Ready**: Stable, tested, documented, CI-validated.
 
@@ -60,4 +50,3 @@
 ## Legacy Migration Mapping
 * **Functional** ➜ Production-Ready / Verified
 * **Planned** ➜ Not Started
-* **Partial** ➜ Partial
