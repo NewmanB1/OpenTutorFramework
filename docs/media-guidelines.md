@@ -1,4 +1,4 @@
-# Media & Video Guidelines
+# media guidelines
 
 This document explains what types of media are supported in OpenTutor Framework and how to add them responsibly while staying true to the project's core principles (offline-first, lightweight, runs on old phones).
 
