@@ -1,4 +1,4 @@
-# Architecture 
+# inference core
 
 **The Linux kernel for tutorbots** — A minimal, modular, offline-first framework that turns discarded Android phones (2019–2023 models with 4–8 GB RAM) into private Socratic tutors.
 
