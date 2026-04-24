@@ -1,4 +1,5 @@
-OpenTutor Authorization and Governance Specification — AUTHORIZATION_AND_GOVERNANCE_SPEC_v1.md
+# authorization spec
+
 Version: 1.0
 Date: April 17, 2026
 Status: Normative / System-Wide Control Layer
