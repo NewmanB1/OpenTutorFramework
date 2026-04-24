@@ -1,4 +1,4 @@
-OpenTutor Framework — SYSTEM_SPEC_v1.2.md
+# System Spec
 
 Version: 1.2
 Date: April 16, 2026
