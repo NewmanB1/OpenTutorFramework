@@ -1,4 +1,4 @@
-OpenTutor Knowledge Bundle Specification — KNOWLEDGE_BUNDLE_SPEC_v1.1.md
+# knowledge bundle spec
 
 Version: 1.1
 Date: April 16, 2026
