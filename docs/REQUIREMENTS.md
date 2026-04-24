@@ -1,4 +1,5 @@
-OpenTutor Framework — Complete System Requirements & Plugin Specification (v1.1)
+# requirements
+
 This refined and completed specification builds directly on the provided v1 draft. It incorporates realistic constraints for running on recently discarded Android phones (2019–2023 models with 2–6 GB RAM, Android 10–14, mid-range Snapdragon/MediaTek/Exynos SoCs), current 2026 on-device LLM capabilities (1B–3B quantized models), and strict offline/privacy goals. All requirements are verifiable, traceable, and prioritized as MUST (core, non-negotiable), SHOULD (strongly recommended), or MAY (optional for future extensions).
 1. System Overview
 OpenTutor is a minimal, offline-first runtime that turns low-resource discarded Android phones into private, Socratic K–12 tutoring devices. The core engine contains no educational content, no subject knowledge, and no hardcoded teaching logic — it only loads, composes, and executes plugins (Portable Learning Modules — PLMs).
