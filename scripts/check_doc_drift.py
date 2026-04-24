@@ -61,7 +61,10 @@ def main():
                 dead_links.append(ref)
 
     # Check 2: Implementation Status Presence
-    # Ensure every .md file in docs/ is mentioned in IMPLEMENTATION_STATUS.md
+    # Ensure every .md file in docs/ is mentioned in IMPLEMENTATION_STATUS.md.
+    # FIX: use os.path.join(root, f) — not os.path.join("docs", f) — so that
+    # files in subdirectories (docs/core/, docs/Learning Science/, etc.) are
+    # checked with their full relative paths instead of being silently skipped.
     with open(STATUS_FILE, "r") as f:
         status_content = f.read()
     
@@ -69,7 +72,7 @@ def main():
     for root, _, files in os.walk("docs"):
         for f in files:
             if f.endswith(".md") and f != "IMPLEMENTATION_STATUS.md":
-                path_to_check = os.path.join("docs", f)
+                path_to_check = os.path.normpath(os.path.join(root, f))
                 if path_to_check not in status_content:
                     status_drift.append(path_to_check)
 
