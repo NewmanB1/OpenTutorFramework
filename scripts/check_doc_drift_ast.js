@@ -93,7 +93,7 @@ function detectDrift() {
       return;
     }
 
-    // Skip reading directories
+    // Skip reading directories - this prevents the EISDIR error
     if (fs.lstatSync(normalizedPath).isDirectory()) return; 
 
     const fileContent = load(normalizedPath);
