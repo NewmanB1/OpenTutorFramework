@@ -1,4 +1,4 @@
-OpenTutor Runtime Composition Engine Specification — RUNTIME_COMPOSITION_ENGINE_SPEC_v1.1.md
+# runtime engine spec
 
 Version: 1.1
 Date: April 16, 2026
